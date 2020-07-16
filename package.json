@@ -1,0 +1,30 @@
+{
+  "name": "bwd",
+  "version": "1.0.0",
+  "description": "build week demo of backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/virginia-d90/build-week-demo.git"
+  },
+  "author": "Virginia Davenport",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/virginia-d90/build-week-demo/issues"
+  },
+  "homepage": "https://github.com/virginia-d90/build-week-demo#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helmet": "^3.23.3",
+    "knex": "^0.21.2",
+    "pg": "^8.3.0"
+  }
+}
