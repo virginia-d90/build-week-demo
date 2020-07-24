@@ -1,6 +1,7 @@
 const db = require("../../data/db");
 
 const findById = (id) => {
+    console.log(id)
     return db("users").where({id}).first().select("*")
 }
 
@@ -10,7 +11,7 @@ const findBy = (obj) =>{
 }
 
 const userList = () => {
-    db("users").select("username")
+  return  db("users").select("username")
 }
 
 const addUser = async (user) => {

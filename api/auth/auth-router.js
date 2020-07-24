@@ -5,8 +5,20 @@ const jwt = require("jsonwebtoken")
 const Users = require("./auth-model")
 
 
+
+
+authRouter.get('/user-list', (req, res) => {
+    Users.userList()
+        .then( list => {
+            res.status(200).json({error:false, message:"list of users retrieved", data:list})
+        })
+        .catch(err => {
+            res.status(500).json({error: true, message:"server can't find userlist"})
+        })
+})
+
 authRouter.get("/", (req, res) => {
-    res.status(200).json({error:false, message:"available endpoints /register, /login"})
+    res.status(200).json({error:false, message:"available endpoints POST : /register, POST : /login"})
 })
 
 authRouter.post("/register", checkUsername, checkEmail, checkPassword, (req, res) => {
