@@ -48,12 +48,14 @@ function checkUser(req, res, next){
             .then(users => {
                 console.log(users)
                 if(users){
-                    
-                    next()
+                    if(users.id === req.token.id){
+                        next()
+                    } else {
+                        res.status(400).json({error: true, message: "this is not your recipe"})
+                    }
                 }else{
                     res.status(400).json({error: true, message: "could not find user"})
-                }
-                
+                }  
             })
             .catch(err => {
                 res.status(400).json({error: true, message: "database error in checkUser middleware", err})
